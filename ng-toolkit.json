@@ -1,0 +1,17 @@
+{
+  "universal": {
+    "project": "front-end",
+    "skipInstall": false,
+    "directory": "."
+  },
+  "serverless": {
+    "provider": "aws",
+    "project": "front-end",
+    "skipInstall": false,
+    "directory": ".",
+    "serverless": {
+      "aws": {},
+      "gcloud": {}
+    }
+  }
+}

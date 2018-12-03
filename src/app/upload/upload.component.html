@@ -1,0 +1,27 @@
+<div id='container' class='container-fluid'>
+    <div class='row'>
+        <div class='col-sm-3'>
+            <app-header></app-header>
+            <app-nav-menu></app-nav-menu>
+        </div>
+        <div class='space'></div>
+        <div class='col-sm-9 body-content'>
+            <h3>
+                Upload a New Image
+            </h3>
+            <input type="file" name="fileToUpload" (change)="onFileSelected($event)">
+
+            <div style="height: 20px;"></div>
+
+            <button id="custom-button" (click)='onUpload()'>
+                Upload Image
+            </button>
+
+            <div style="height: 10px;"></div>
+
+            <p *ngIf="checker" class="alert-text">
+                <strong>{{ message }}</strong>
+            </p>
+        </div>
+    </div>
+</div>

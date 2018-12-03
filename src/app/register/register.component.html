@@ -1,0 +1,59 @@
+<h1 class="header-login">
+    Image Tag Sign Up
+</h1>
+<div class="center-screen">
+    <form [formGroup]="registerForm">
+        <div class="form-group">
+            <label>
+                User Name<br>
+                <input name="userName" style='width: 240px;' type="text" class="form-control" formControlName="userName">
+            </label>
+            <div class="error-msg" *ngIf="!(registerForm?.get('userName')?.valid) && registerForm?.get('userName')?.touched">
+                <strong>Please enter a valid name that is more than 4 and less than 24 characters!</strong>
+            </div>
+        </div>
+
+        <div class="space"></div>
+
+        <div class="form-group">
+            <label>
+                Password<br>
+                <input name="password" style='width: 240px;' type='password' class="form-control" formControlName='password'><br>
+            </label>
+            <div class="error-msg" *ngIf="!(registerForm?.get('password')?.valid) && registerForm?.get('password')?.touched">
+                <strong>Password includes more than 8 characters!</strong>
+            </div>
+        </div>
+    </form>
+
+    <div class="space"></div>
+
+    <button round outline color='dark' style='width: 240px;' [disabled]="!(registerForm?.valid)" (click)='signUp(registerForm)'>
+        Sign Up
+    </button>
+
+    <div class="space"></div>
+    <p *ngIf="!registerChecker" class="error-msg">
+        <strong>
+            The user name or password is not correct!
+            Please try again.<br>
+            {{ msg }}
+        </strong>
+    </p>
+
+    <p>Already have an account?
+        <b (click)='login()'> Sign In</b>
+    </p>
+
+    <div class="space"></div>
+    <p *ngIf="loading" class="load-msg">
+        Authenticating...
+    </p>
+    <p *ngIf="ok" class="succ-msg">
+        <strong>
+            You have successfully register for our services<br>
+            Please go to the Sign In and Login with your credentials.
+        </strong>
+    </p>
+    <!-- <p>form: {{ registerForm?.value | json }}</p> -->
+</div>

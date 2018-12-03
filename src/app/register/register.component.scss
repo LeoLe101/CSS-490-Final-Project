@@ -1,0 +1,42 @@
+.scroll-content {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.space {
+    margin-top: 15px;
+}
+
+.input-cover {
+    position: static;
+}
+
+.error-msg {
+    color: red;
+}
+
+.load-msg {
+    color: rgb(119, 47, 214);
+}
+
+.succ-msg {
+    color: rgb(29, 163, 29);
+}
+
+.center-screen {
+    display: table;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 20%
+}
+
+.header-login {
+    font-family: fantasy;
+    color: blueviolet;
+    display: table;
+    margin: auto;
+    margin-top: 10%;
+}

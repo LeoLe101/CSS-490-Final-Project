@@ -1,0 +1,59 @@
+#usersList {
+    height: 500px;
+    width: 700px;
+    border: 1px solid #a6fc7f;
+    overflow: scroll;
+    padding: 0;
+    list-style: none;
+    li {
+        padding: 10px 5px;
+        line-height: 1.5;
+        &:nth-child(odd) {
+            background: #d8fff2;
+        }
+        &:nth-child(even) {
+            background: #7cf58c;
+        }
+    }
+}
+
+.space {
+    height: 10px;
+}
+
+.search-bar {
+    width: 300px;
+    height: 50px;
+    text-align: center;
+}
+
+.alert-text {
+    color: rgb(250, 0, 0);
+}
+
+#custom-button {
+    height: 50px;
+    width: 305px;
+    text-emphasis-color: black;
+    border: 2px solid #a67cf5;
+    background-color: #a67cf5
+}
+
+#hashTagsList {
+    height: 500px;
+    width: 700px;
+    border: 1px solid #7cbbf5;
+    overflow: scroll;
+    padding: 0;
+    list-style: none;
+    li {
+        padding: 10px 5px;
+        line-height: 1.5;
+        &:nth-child(odd) {
+            background: #a8dcff;
+        }
+        &:nth-child(even) {
+            background: #65a5ee;
+        }
+    }
+}

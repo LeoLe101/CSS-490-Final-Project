@@ -1,0 +1,36 @@
+<div id='container' class='container-fluid'>
+    <div class='row'>
+        <div class='col-sm-3'>
+            <app-header></app-header>
+            <app-nav-menu></app-nav-menu>
+        </div>
+        <div class='space'></div>
+        <div class='col-sm-9 body-content'>
+            <h2>{{ dataPassed }}</h2>
+            <div style="text-align: center;">
+                <!-- <input name="filter-image" [(ngModel)]="searchText" placeholder="Search for image Hash Tag here" class="search-bar">
+
+                <div class="space"></div> -->
+
+                <button *ngIf="moreChecker" id="custom-button" (click)='loadMore()'>
+                    Load More Images
+                </button>
+            </div>
+            <p *ngIf="!moreChecker" class="alert-text">
+                <strong>{{ dataPassed }} is out of images to show you!</strong>
+            </p>
+
+            <div class='row'>
+                <ul>
+                    <li *ngFor="let image of testList | filter : searchText">
+                        <!-- <a [routerLink]="['/gallery', image.id]" routerLinkActive="router-link-active">
+                        </a> -->
+                        <img src="{{ image.imgLink }}" class="tn" width="200" height="160" (click)='getImg(image.id, image.imgLink, image.timeStamp)'>
+                        <p>Hash Tag: {{ image.hashTag }}</p>
+                        <p>Date Uploaded: {{ image.timeStamp * 1000 | date:'yyyy-MM-dd' }}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div id='container' class='container-fluid'>
+    <div class='row'>
+        <div class='col-sm-3'>
+            <app-header></app-header>
+            <app-nav-menu></app-nav-menu>
+        </div>
+        <div class='space'></div>
+        <div class='col-sm-9 body-content' style="text-align: center;">
+            <input name="search-user-list" [formControl]="userNameControl" placeholder="search for user name" class="search-bar">
+            <p *ngIf="!userChecker" class="alert-text">
+                <strong>{{ userNameControl.value }} does not exist in the database!</strong>
+            </p>
+            <div class="space"></div>
+            
+            <button id="custom-button" (click)='loadUserNameButton()'>
+                Load User Data
+            </button>
+            
+            <div class="row">
+                <ul id="usersList">
+                    <li *ngFor="let user of userList">
+                        <p (click)='getUserImg(user.userName)'>Users: {{ user.userName }}</p>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="space"></div>
+            
+            <input name="search-hashtag-list" [formControl]="hashTagControl" placeholder="search for hash tag" class="search-bar">
+            <p *ngIf="!hashChecker" class="alert-text">
+                <strong>{{ hashTagControl.value }} does not exist in the database!</strong>
+            </p>
+            
+            <div class="space"></div>
+            
+            <button id="custom-button" (click)='loadHashTagButton()'>
+                Load Hash Tag Data
+            </button>
+            
+            <div class="row">
+                <ul id="hashTagsList">
+                    <li *ngFor="let hashTag of hashTagList">
+                        <p (click)='getHashTagImg(hashTag.hashTag)'>Hash Tag #: {{ hashTag.hashTag }}</p>
+                    </li>
+                </ul>
+            </div>
+            <div *ngIf="loading">Loading data...</div>
+        </div>
+    </div>
+</div>

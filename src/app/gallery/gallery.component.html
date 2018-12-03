@@ -1,0 +1,63 @@
+<div id='container' class='container-fluid'>
+    <div class='row'>
+        <div class='col-sm-3'>
+            <app-header></app-header>
+            <app-nav-menu></app-nav-menu>
+        </div>
+        <div class='space'></div>
+        <div class='col-sm-9 body-content'>
+            <div style="text-align: center;">
+                <form [formGroup]="galleryForm">
+                    <input name="email-share" formControlName="emailControl" placeholder="Enter Email information you want to share this image with"
+                    class="search-bar">
+                    <p *ngIf="!emailChecker" class="alert-text">
+                        <strong>{{ emailInvalid }}</strong>
+                    </p>
+                    <div class="space"></div>
+                    <button id="custom-button" (click)='shareToEmail(galleryForm)'>
+                        Share Image by Email
+                    </button>
+                    
+                    <div class="space"></div>
+                    
+                    <input name="msg-share" formControlName="msgControl" placeholder="Enter phone number information you want to share this image with"
+                    class="search-bar">
+                    <p *ngIf="!msgChecker" class="alert-text">
+                        <strong>{{ msgInvalid }}</strong>
+                    </p>
+                    <div class="space"></div>
+                    <button id="custom-button" (click)='shareToMsg(galleryForm)'>
+                        Share Image by Text Message
+                    </button>
+                </form>
+                    
+                <div class="space"></div>
+
+                <strong>
+                    Phone Changed: {{phone}}
+                </strong>
+            </div>
+
+            <div class="space"></div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="{{ link }}" class="img">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 timeStamp-row">
+                    <span id="timeStamp">
+                        Date Uploaded: {{ timeStamp * 1000 | date:'yyyy-MM-dd' }}
+                    </span>
+                </div>
+                <div class="col-md-12 timeStamp-row">
+                    <span id="timeStamp">
+                        ID: {{ id }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
