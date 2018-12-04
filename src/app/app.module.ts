@@ -1,4 +1,3 @@
-import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -35,17 +34,15 @@ import { UploadComponent } from './upload/upload.component';
         UploadComponent,
         // InfiniteScrollerDirective,
     ],
-    imports:[
- CommonModule,
-NgtUniversalModule,
- 
-        
+    imports: [
+        CommonModule,
         HttpClientModule,
         AppRoutingModule,
+        BrowserModule,
         FormsModule,
         ReactiveFormsModule,
     ],
-    exports: [    ],
+    exports: [],
     providers: [
         ApiService
     ],
